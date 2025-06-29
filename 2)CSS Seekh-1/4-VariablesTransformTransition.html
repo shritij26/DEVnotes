@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+</head>
+<style>
+
+    :root{ /* Inside Root everything is global var*/
+        --color:blue;
+        --seccolor: rgb(161, 161, 228); /* Secondary Color*/
+    }
+    .box1{
+        background-color: var(--color);
+    }
+    ul{
+        background-color: var(--seccolor);
+        display: flex;
+    }
+    ul li{
+        list-style: none;
+        padding: 34px;
+    }
+    ul li:first-child{
+        --color: rgb(100, 241, 143); /* Localizing the global variable */
+        background-color: var(--color);
+    }
+    
+    @media only screen and (max-width: 455){ /* will only run when screen width<455 */
+        body{
+            background-color: burlywood;
+        }
+        .box1{
+            background-color: aquamarine;
+        }
+    }
+
+    .container2{
+        width: 500px;
+        height: 80px;
+        border: 2px solid peru;
+    }
+    .box2{
+        height: 50px;
+        width: 50px;
+        background-color: antiquewhite;
+        border: 2px solid gray;
+        /* transform: rotate(30deg); */
+        /* transform: rotateX(60deg); */
+        /* scale: 1.5; even can do in 3d */
+        /* transform: translatex(100%); aur aage */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .boxxx{
+        background-color: burlywood;
+        width: 80vw;
+        height: 60vh;
+    }
+    .box{
+        background-color: lemonchiffon;
+        height: 8vh;
+        width: 12vw;
+        border: 2px solid brown;
+        /* transition-property: transform;
+        transition-duration: 3s;
+        transition-timing-function: ease-in;
+        transition-delay: 1s; 
+        short hand below of this */
+        transition: transform 3s ease-in-out 1s;
+    }
+    .translate{
+        transform: translateX(10vw) translateY(10vh) scale(1.5);
+    }
+</style>
+<body>
+    <div class="box1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit veniam, eius dolore qui earum quidem maxime tempore illum molestias incidunt molestiae nostrum officiis iure maiores? Sint eius ducimus placeat nam. Architecto itaque dolor ipsam molestiae doloribus voluptatum maxime? Blanditiis, delectus nostrum esse excepturi aperiam sit.NHHNHCJYF
+    </div>
+    <div>
+        <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
+        </ul>
+    </div>
+    <div class="container2">
+        <div class="box2">
+            hello
+            ssfss
+        </div>
+    </div>
+    <br>
+    <div class="boxxx">
+        <div class="box translate">
+
+        </div>
+    </div>
+</body>
+</html> 

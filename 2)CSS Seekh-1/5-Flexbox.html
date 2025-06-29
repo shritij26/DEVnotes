@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox 38</title>
+</head>
+
+            <!-- Must Visit this Link https://appbrewery.github.io/flex-layout/ -->
+
+<style>
+    .container{
+        height: 50vh;
+        border: 2px dashed red;
+        display: flex; /* default behavior of flex convert to left to right*/
+        justify-content: center; /* Aligns flex items along the main axis of the current line of the flex container */        
+        
+                       /* FLEX DIR. = MAIN AXIS   &&   FLEX DIR. PERPEN. = CROSS AXIS */
+
+        align-items: center; /* Aligns flex items along the cross axis of the current line of the flex container*/
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start; /*we use this  alignment when we have multiple lines */
+        row-gap: 1px;
+        column-gap: 12px;
+    }
+    .item{
+        height: 35px;
+        width: 35px;
+        border: 2px solid black;
+        margin: 3px;
+        background-color: blueviolet;
+    }
+    .Link{
+        text-align: center;
+    }
+</style>
+<body>
+    
+    <main>
+        <div class="container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </main>
+    <div class="Link">
+        <a href="https://appbrewery.github.io/flex-layout/">Ispr jaake dekho flexbox</a>
+        <br><br>
+        <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">theory k liye ispr </a>
+    </div>
+
+</body>
+</html>

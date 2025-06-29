@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMM</title>
+</head>
+
+<body>
+    <h1>Mai form seekh raha yayyy</h1>
+    <h3>Naam daal bhai kya kr rha</h3>
+    <form action="post">
+
+        <input type="text" name="username" placeholder="Enter your name">
+
+        <br><br>
+
+        <label for="username">Username daal bhai </label> <!-- This is how we create a label for an input field -->
+        <input type="text" name="username" id="username" placeholder="Enter your name">
+
+        <div> <!-- This is divide tag, used to group elements -->
+            <input type="radio" id="male" name="gender" value="male"> <!-- This is how we create a checkbox -->
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <!-- we kept the name same so that only one can be selected at a time -->
+            <label for="female">Female</label>
+        </div>
+        
+        <div>
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+            <label for="subscribe">Subscribe to get membership</label>
+        </div>
+
+
+        <div>
+            <textarea name="comment" rows="4" cols="50">Enter your comment here...</textarea>
+        </div>
+
+        <div>
+            <select name="fruits">
+                <option value="apple">Apple</option>
+                <option value="banana">Banana</option>
+                <option value="cherry">Cherry</option>
+            </select>
+
+            <br>
+
+            <button type="submit">Submit</button>
+
+        </div>
+
+        <!-- What we write inside div is called a block element, it is used to group elements together -->
+
+        <!-- Stmt in span is called inline (just single line), it is used to style a part of the text
+             anything inside span is generated in single line  -->
+
+
+        <span>This is an inline element</span>
+        
+        <div>
+            <a href="./1-LinksImageTableList.html">This is the Prractise i done before</a> 
+            <!-- This is how we refer to another page using a link -->
+            <br>
+            <a href="/Pehli SITE/firstsite.html">This was my first stupid project</a>
+            <!-- This is how we refer to another page which is in diff folder -->
+        </div>
+    </form>
+</body>
+
+</html>

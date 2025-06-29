@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        margin: 0; /*removing default margin*/
+        padding: 0; /*removing default padding*/
+    }
+    .box{ 
+        background-color: lightgreen;
+    }
+    .box1{
+        color: blue;
+        padding: 10px;
+        border: 2px solid black;
+        margin: 8px;
+        height: 100px;
+        box-sizing: border-box; /*includes padding and border in the element's total width and height*/
+    }
+    .box2{
+        border: 2px solid black;
+        margin: 8px;
+        color: red;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: italic;
+        font-weight: bold;
+        font-size: smaller;
+        line-height: 25px;
+        text-transform: capitalize; /*capitalizes the first letter of each word*/
+        text-decoration: black underline; 
+    }
+    .box3{
+        background-color: blueviolet; /* SPECIFICITY where the lowest subclass style the orginal bg color*/
+        text-align: center; 
+    }
+    .box4{
+        background-color: lightgray;
+        border: 2px solid black;
+        margin: 35px;
+        padding: 28px;
+        /* display: inline; /* makes thr div behave like an inline element */ 
+        /* in inline there is a prblm in margin and border implenation, so try using inline block */
+        display: inline-block;
+        box-shadow: 2px 2px 5px black;
+        text-shadow: 2px 2px 4px rgb(201, 51, 51);
+    }
+    nav ul li {
+        list-style: devanagari; /* this is how we change the list style */
+        list-style-position: inside; /* this make the style inside the list, if we apply bg color before doing
+        this, the bg color will not cover the list style */
+    }
+
+    .over{
+        width: 40vw; /* vw = viewport width, 1vw = 1% of the viewport width */
+        height: 30vh;
+        border: 2px solid black;
+        overflow: auto; /* this will add a scrollbar only if the content overflows the box */
+    }
+</style>
+<body>
+
+    <div class ="box box1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis hic vel doloribus aliquid aliquam suscipit natus consectetur cum alias animi?
+    </div>
+
+    <div class ="box box2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis hic vel doloribus aliquid aliquam suscipit natus consectetur cum alias animi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur non, perferendis, quae, expedita quo dolor quis earum corporis nesciunt quod culpa quas exercitationem. Provident esse reiciendis iste fugit debitis ad sequi nesciunt repellendus repudiandae dolore dolores vitae, exercitationem possimus distinctio!
+    </div>
+
+    <div class ="box box3">
+        Lorem ipsum dolor sit amet consectetur adipisicing.
+    </div>
+    <br><br>
+    <div class ="box box4">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt!
+    </div>
+
+    <!-- list ki Styling -->
+    <nav>
+        <ul>
+            <li >HOME</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
+        </ul>
+    </nav>
+
+    <!-- overflow handling -->
+    <div class="over">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nam laborum quae neque ducimus! Tempore, culpa distinctio sunt veniam ut nobis repellendus dolorem recusandae ullam sed, minima obcaecati earum incidunt odit vel animi nisi corporis aliquid mollitia minus aperiam sit fugiat unde voluptatem? Animi repellat expedita suscipit illum consequatur dolorum magni tempore nulla, delectus asperiores aperiam, obcaecati eos! Aspernatur quibusdam deleniti rerum officia quis, repellat natus porro consectetur eveniet culpa qui possimus, doloribus repudiandae ipsam in temporibus aut ducimus! Cupiditate possimus tenetur laudantium doloribus facere, reprehenderit dolore asperiores doloremque nisi distinctio tempore voluptate odio explicabo aut perspiciatis dolores optio? Doloremque!
+    </div>
+
+    <br><br>
+</body>
+</html>
+
+                        <!-- WATCH 22 FOR UNDERSTANDING DIFFERENT SIZESS-->

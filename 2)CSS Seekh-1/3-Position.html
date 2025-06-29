@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0; 
+        padding: 0; 
+    }
+    .box{
+        border: 2px solid black;
+        height: 430px;
+        width: 80vw;
+        padding: 3px;
+        margin: 3px;
+    }
+    .box1{
+        background-color: lightgreen;
+        /* position: absolute; this make absolute to the nearest relative parent class(here parent) */
+        position: sticky; /*when we scroll down it get stick to top */
+        top: 0px;
+        height: 76px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        z-index: 1; /* this is how we change the stacking order of the element */
+    }
+    .box2{
+        background-color: rgb(236, 109, 109);
+        position: relative; /* this is how we position the element */
+        top: -29px;
+        left: 50px;
+    }
+    .box3{
+        position: fixed; /* even if we scroll the page this will be fixed there only */
+        background-color: lightblue;
+    }
+    .box4{
+        background-color: rgb(219, 219, 43);
+    }
+    .parent{
+        padding: 43px;
+        margin: 34px;
+        border: 2px solid black;
+        /* if parent is not relative we can use other method like transform:, filter:, perspective: */
+    }
+
+</style>
+<body>
+    <div class="parent">
+        <div class = "box box1"></div>
+        <div class = "box box2"></div>
+        <div class = "box box3"></div>
+        <div class = "box box4"></div>
+    </div>
+</body>
+</html>

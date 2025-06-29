@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Element selector */
+        div {
+            background-color: black;
+            color: yellow;
+        }
+        /* Class selector, we can create sub class also like box box1 box2 in next code-2*/
+        .blue { /*pointing to class blue */
+            background-color: lightblue;
+            color: darkblue;
+        }
+        /* ID selector */
+        #red{ /*pointing to id red */
+            background-color: red;
+            color: white;
+        }
+        /* Child selector */
+        div > p { /*p is child of div */
+            background-color: lightgreen;
+            color: green;
+        }
+        /* Universal selector */
+        * {
+            margin: 0; /*removing default margin*/
+        }
+        /* Pseudo-class selector */
+        a:visited { 
+            color: red;
+        }
+        a:hover {
+            background-color: black;
+            color: goldenrod;
+        }
+    </style>
+</head>
+<body>
+    <div >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis tempore reprehenderit voluptatum natus, veniam voluptatibus?
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque. Quisquam, voluptatum. Quasi, asperiores.</p>
+    </div>
+
+    <div class="blue">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, expedita. Sequi non amet explicabo deserunt soluta?
+    </div>
+
+    <div id = "red">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque. Quisquam, voluptatum. Quasi, asperiores.
+    </div>
+    <a href="https://www.google.com">CLICK TO GO TO GOOGLE</a>
+</body>
+</html>
+
+                                    
+
+

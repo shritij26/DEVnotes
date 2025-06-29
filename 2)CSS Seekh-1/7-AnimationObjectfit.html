@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<style>
+    .container2{
+        background-color: rgb(192, 226, 226);
+        height: 10vh;
+        width: 30vw;
+    }
+    .box2{
+        width: 34px;
+        height: 45px;
+
+        /* animation-name: mereanimations;
+        animation-duration: 3s; 
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate-reverse;
+
+        short hand for all this
+        animation: name duration timing-function delay iteration-count direction fill-mode;
+        */
+        animation: mereanimations 3s ease-in-out  infinite alternate-reverse;
+        /* chala k dekhna maja aaegi forward backward forward backward */
+
+        /* if we want to put multiple animation such writr their syntax nd seprarte them by comma */
+    }
+    @keyframes mereanimations {
+        from{
+            background-color: aqua;
+        }
+        to{
+            transform: translateX(1000px);
+            background-color: yellow;
+        }
+    }
+
+    .container{
+        height: 300px;
+        width: 340px;
+        border: 2px solid blue;
+        background-color: azure;
+    }
+    img{
+        width: 280px;
+        height: 260px;
+        object-fit: cover; /* retains it original aspect ratio */
+        /* object-fit: contain; */
+        /* filter: blur(10px); */
+        /* many more filters r there */
+    }
+</style>
+<body>
+    <div class="container2">
+        <div class="box2">
+            Box
+        </div>
+    </div>
+
+    <div class="container">
+        <img src="https://cdn.britannica.com/48/252748-050-C514EFDB/Virat-Kohli-India-celebrates-50th-century-Cricket-November-15-2023.jpg" alt="Virat">
+    </div>
+</body>
+</html>
+
+
+
+
+                                <!-- 52 FIGMA UNDERSTANDING -->
