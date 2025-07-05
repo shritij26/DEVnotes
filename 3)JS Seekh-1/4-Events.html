@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">Lorem ipsum dolor sit amet.</div>
+    </div>
+    <button id="btn">Change Content</button>
+
+    <br><br><br>
+    <div class="container2" style="width: 400px; height: auto; border: 2px solid purple;">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat laborum quo, velit sed asperiores voluptas totam, perspiciatis deserunt consectetur non magni, illum eos similique consequuntur ullam beatae veniam officiis nisi voluptates ut maxime debitis. Eos sit eligendi cum? Alias autem blanditiis dignissimos ullam error magni?
+    </div>
+
+
+    <script>
+
+        let b = document.getElementById("btn")
+        b.addEventListener("dblclick", (e) => {      // e is just variable
+            document.querySelector(".box").innerHTML = "<b>Yayy!!</b> Content got changed"
+        })
+
+        // *********************************************
+        function getRandomColor() {
+            let val1 = Math.ceil(0 + Math.random() * 255);
+            let val2 = Math.ceil(0 + Math.random() * 255);
+            let val3 = Math.ceil(0 + Math.random() * 255);
+            return `rgb(${val1}, ${val2}, ${val3})` //$ just converting in into string
+        }
+
+        setInterval(() => {
+            document.querySelector(".container2").style.background = getRandomColor()
+        }, 100);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>DOM Insert & Delete Example</h2>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <button onclick="addItem()">Add Item (appendChild)</button> <!-- will learn about onclick later -->
+    <button onclick="insertFirstItem()">Insert First Item (insertBefore)</button>
+    <button onclick="replaceSecondItem()">Replace Second Item (replaceChild)</button>
+    <button onclick="removeItem()">Delete Last Item (removeChild)</button>
+    <button onclick="removeList()">Delete List (remove)</button>
+    <button onclick="removeItem()">Delete Element</button>
+    <button onclick="toggleHighlight()">Toggle Highlight</button>
+    <style>
+    .highlight {
+        background-color: yellow;
+    }
+    </style>
+
+    <script>
+    // 1. appendChild(): Adds a node as the last child of a parent node.
+    function addItem() {
+        const ul = document.getElementById('myList');
+        const li = document.createElement('li');
+        li.textContent = 'New Item (appendChild)';
+        ul.appendChild(li);
+    }
+
+    // 2. insertBefore(): Inserts a node before a reference node as a child of a specified parent node.
+    function insertFirstItem() {
+        const ul = document.getElementById('myList');
+        const li = document.createElement('li');
+        li.textContent = 'First Item (insertBefore)';
+        ul.insertBefore(li, ul.firstChild);
+    }
+
+    // 3. removeChild(): Removes a child node from the DOM and returns the removed node.
+    function removeItem() {
+        const ul = document.getElementById('myList');
+        if (ul.lastChild) {
+            ul.removeChild(ul.lastChild);
+        }
+    }
+
+    // 4. remove(): Removes the element from the DOM.
+    function removeList() {
+        const ul = document.getElementById('myList');
+        ul.remove();
+    }
+
+    // 5. replaceChild(): Replaces a child node within the given parent node.
+    function replaceSecondItem() {
+        const ul = document.getElementById('myList');
+        if (ul.children.length > 1) {
+            const newLi = document.createElement('li');
+            newLi.textContent = 'Replaced Item (replaceChild)';
+            ul.replaceChild(newLi, ul.children[1]);
+        }
+    }
+    // 6. toggle(): Toggles a class on the element (adds if not present, removes if present).
+    function toggleHighlight() {
+        const ul = document.getElementById('myList');
+        ul.classList.toggle('highlight');
+    }
+
+    /*
+    Summary:
+    - appendChild(): Add as last child
+    - insertBefore(): Insert before a specific child
+    - removeChild(): Remove a specific child
+    - remove(): Remove the element itself
+    - replaceChild(): Replace a child with another
+    - toggle(): Toggles a class on the element
+    */
+    </script>
+</body>
+</html>

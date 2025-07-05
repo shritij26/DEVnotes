@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // const callback = (arg)=>{
+        //     console.log(arg)
+        // }
+        // const loadScript = (scr, callback)=>{
+        //     let sc = document.createElement("script");
+        //     sc.src =  src;
+        //     sc.onload = callback("javascipt");
+        //     document.head.append(sc)
+        // }
+
+        /*  
+                                        VIDEO 75
+        
+        let prom1 = new Promise((resolve, reject) => {
+            let a = Math.random();
+            if (a < 0.5) {
+                reject("No random no. was not supporting ERROR")
+            }
+            else {
+                setInterval(() => {
+                    console.log("Yes i m done")
+                    resolve("harry") //move to then
+                }, 2000);
+            }
+        })
+        prom1.then((a) => {
+            console.log(a)
+        }).catch((err)=>{      //this will run if promise is rejected
+            console.log(err)
+        })                                                                      */
+
+        
+        async function getData() {
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    resolve(455)
+                }, 2500);
+            })
+        }
+
+        // Async function to fetch data from an API endpoint
+        async function getData2(){
+            let x = await fetch('https://jsonplaceholder.typicode.com/todos/1') // Fetch data from the given URL
+            let data = await x.json() // Parse the response as JSON
+            return data
+        }
+
+        async function main(){
+            console.log("loading modules")
+
+            console.log("working on it")
+
+            console.log("loading data")
+
+            // let data = await getData() //wait for getData to get processed
+
+            let data = await getData2()
+
+            console.log(data)
+
+            console.log("data processed")
+        }
+                                        // video 76
+        main()
+                                           
+    </script>
+</body>
+
+</html>

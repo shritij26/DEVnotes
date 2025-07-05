@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .box{
+            height: 34px;
+            width: 34px;
+            padding: 34px;
+            margin: 34px;
+            border: 2px solid blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">javascript 1</div>
+        <div class="box">javascript 2</div>
+        <div class="box">javascript 3</div>
+        <div id ="hh" class="box">javascript 4</div>
+        <div class="box">javascript 5</div>
+    </div>
+
+    <script>
+        document.title = "DOM-1" //changes the title
+        document.body.style.backgroundColor = "gray" //for entire
+
+        // a method to create array in js
+            let arr = Array.from(Array(5).keys())
+            console.log(arr.slice(1)) //check console in inspect
+
+        console.log("hello")
+        let b = document.getElementsByClassName("box")
+        console.log(b) //check console in inspect
+
+        b[2].style.backgroundColor = "red"
+        document.getElementById("hh").style.backgroundColor = "yellow"
+
+        document.querySelector(".box").style.backgroundColor = "green"
+        //searches for the first class with class name box
+
+        //querySelectorAll creates an array of class with name box
+        document.querySelectorAll(".box").forEach(e =>{
+            e.style.color = "orange"                    
+        }) //a for loop created which turn the color of each box
+
+    </script>
+</body>
+</html>

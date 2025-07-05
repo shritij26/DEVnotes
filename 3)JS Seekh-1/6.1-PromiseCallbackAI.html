@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            What is a Callback?
+            -------------------
+            A callback is a function passed as an argument to another function, to be executed later.
+            Problem: If callbacks are nested (callback inside callback), it leads to "callback hell" or "pyramid of doom",
+            making code hard to read and maintain.
+        */
+
+        // Example of callback and callback hell:
+        function firstTask(callback) {
+            setTimeout(() => {
+                console.log("First task done");
+                callback();
+            }, 1000);
+        }
+
+        function secondTask(callback) {
+            setTimeout(() => {
+                console.log("Second task done");
+                callback();
+            }, 1000);
+        }
+
+        function thirdTask() {
+            setTimeout(() => {
+                console.log("Third task done");
+            }, 1000);
+        }
+
+        // Callback hell (nested callbacks)
+        firstTask(function() {
+            secondTask(function() {
+                thirdTask();
+            });
+        });
+
+        /*
+            What is a Promise?
+            ------------------
+            A Promise is an object representing the eventual completion (or failure) of an asynchronous operation.
+            It helps avoid callback hell by providing .then() and .catch() methods for chaining.
+            Promise has 3 states: pending, resolved (fulfilled), rejected.
+        */
+
+        // Syntax of Promise:
+        let myPromise = new Promise(function(resolve, reject) {
+            // async operation
+            let success = true; // change to false to test reject
+            if (success) {
+                resolve("Promise resolved successfully!");
+            } else {
+                reject("Promise rejected!");
+            }
+        });
+
+        // Using .then() and .catch() to handle resolve and reject
+        myPromise
+            .then(function(result) {
+                console.log(result); // Output if resolved
+            })
+            .catch(function(error) {
+                console.log(error); // Output if rejected
+            });
+
+        /*
+            Example: Chaining Promises to avoid callback hell
+        */
+        function asyncTask(taskName, delay) {
+            return new Promise(function(resolve, reject) {
+                setTimeout(() => {
+                    if (taskName !== "fail") {
+                        console.log(taskName + " done");
+                        resolve();
+                    } else {
+                        reject("Task failed!");
+                    }
+                }, delay);
+            });
+        }
+
+        asyncTask("Task 1", 1000)
+            .then(() => asyncTask("Task 2", 1000))
+            .then(() => asyncTask("Task 3", 1000))
+            .catch((err) => console.log(err));
+    </script>
+</body>
+</html>

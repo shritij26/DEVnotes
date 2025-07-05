@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPs</title>
+</head>
+
+<body>
+
+    <script>
+
+        /* let obj = {
+            a: 10,
+            b: "Hello",
+        }
+        console.log(obj);
+        console.log(obj.a); */
+
+        // OOPs - Object Oriented Programming
+        // 1. Class
+        // 2. Object
+        // 3. Inheritance
+        // 4. Encapsulation
+        // 5. Polymorphism
+
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            greet() {
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            }
+        }
+
+        const person1 = new Person("Alice", 30);
+        const person2 = new Person("Bob", 25);
+
+        person1.greet(); 
+        person2.greet(); 
+
+        // Inheritance: Employee class extends Person class
+        class Employee extends Person {
+            constructor(name, age, position) {  // The constructor now takes an extra parameter: position
+            super(name, age); // Call the parent class (Person) constructor using super()
+            this.position = position;// Add a new property specific to Employee
+            }
+
+            // Method overriding: redefine greet() for Employee
+            greet() {
+            super.greet(); // Call the parent class greet() method
+            console.log(`I work as a ${this.position}.`);
+            }
+        }
+        const employee1 = new Employee("Charlie", 28, "Software Engineer");
+        // Call the overridden greet() method
+        employee1.greet();
+
+        /*
+        The `instanceof` operator in JavaScript is used to check if an object is an instance of a particular class or constructor function.
+        It returns true if the object is derived from the specified class, otherwise false.
+        */
+
+        // Using instanceof with the above example:
+        console.log(person1 instanceof Person);    // true, because person1 is created from Person
+        console.log(employee1 instanceof Employee); // true, because employee1 is created from Employee
+        console.log(employee1 instanceof Person);   // true, because Employee extends Person, so employee1 is also a Person
+        console.log(person1 instanceof Employee);   // false, person1 is not an Employee
+
+        /*
+        Encapsulation: Using getters and setters to control access to properties.
+        */
+        class BankAccount {
+            #balance; // private field (ES2022+)
+            constructor(owner, initialBalance) {
+                this.owner = owner;
+                this.#balance = initialBalance;
+            }
+            get balance() {
+                return this.#balance;
+            }
+            deposit(amount) {
+                if (amount > 0) 
+                this.#balance += amount;
+            }
+            withdraw(amount) {
+                if (amount > 0 && amount <= this.#balance) 
+                this.#balance -= amount;
+            }
+        }
+        const account = new BankAccount("David", 1000);
+        account.deposit(500);
+        account.withdraw(200);
+        console.log(`${account.owner}'s balance: $${account.balance}`);
+
+        /*
+        Polymorphism: Different classes implement the same method.
+        */
+        class Animal {
+            speak() {
+                console.log("Animal speaks");
+            }
+        }
+        class Dog extends Animal {
+            speak() {
+                console.log("Woof!");
+            }
+        }
+        class Cat extends Animal {
+            speak() {
+                console.log("Meow!");
+            }
+        }
+        const animals = [new Dog(), new Cat()];
+        animals.forEach(animal => animal.speak());
+
+        /*
+        Abstraction: Abstracting details using base class and derived classes.
+        */
+        class Shape {
+            area() {
+                throw new Error("Method 'area()' must be implemented.");
+            }
+        }
+        class Circle extends Shape {
+            constructor(radius) {
+                super();
+                this.radius = radius;
+            }
+            area() {
+                return Math.PI * this.radius * this.radius;
+            }
+        }
+        class Rectangle extends Shape {
+            constructor(width, height) {
+                super();
+                this.width = width;
+                this.height = height;
+            }
+            area() {
+                return this.width * this.height;
+            }
+        }
+        const shapes = [new Circle(5), new Rectangle(4, 6)];
+        shapes.forEach(shape => console.log(`Area: ${shape.area()}`));
+
+                                    //  VIDEO 82 FOR JS XXTRA 
+    </script>
+</body>
+</html>
