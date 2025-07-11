@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .class1{
+        color: red;
+        font-weight: bold;
+        background-color: aliceblue;
+    }
+</style>
+
+<body>
+    <h1>Helloooooooooooooo</h1>
+    <h2>hi i am js ur friend</h2>
+    <br>
+    <a href="https://www,google,com">Click to open google</a>
+    <br>
+    <button>Click</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Using jQuery to change the color of the h1 element
+        $("h1").css("color", "blue");
+        // This is a shorthand for document.querySelector("h1").style.color = "blue";  
+        
+        $("h2").addClass("class1");
+        // This adds the class "class1" to the h2 element, applying the styles
+
+        $("h2").text("I am a jQuery friend");
+
+        //**************************************************************************************
+
+        $("a").attr("href", "https://www.youtube.com");
+        // This changes the href attribute of the anchor tag to point to YouTube
+
+        //**************************************************************************************
+
+        $("button").click(function() { // event listener using jQuery
+            $("h1").css("color", "green");
+        });
+
+        //***************************************************************************************
+
+        // Insert a paragraph before the h2 element using .before()
+        $("h2").before("<p>This is inserted before h2 using .before()</p>");
+
+        // Prepend text inside the h2 element using .prepend()
+        $("h2").prepend("Prepended text using .prepend() ");
+
+        // Append text inside the h2 element using .append()
+        $("h2").append(" Appended text using .append()");
+
+        // Insert a paragraph after the h2 element using .after()
+        $("h2").after("<p>This is inserted after h2 using .after()</p>");
+
+        //****************************************************************************************
+
+        $("button").click(function() {     // or u can also write $("button").on("click", function() {
+            $("p").slideToggle(); // u can also design ur custom animation in curly braces
+        });
+        
+    </script>
+</body>
+
+</html>
